@@ -1,0 +1,10 @@
+<div>
+  <h2>List of Comics</h2>
+  <ul>
+    @for(comic of comics; track $index) {
+      <li>
+        {{ comic.serie }} - {{ comic.title }} ({{ comic.numero }}) [{{ comic.editeur }}]
+      </li>
+    }
+  </ul>
+</div>

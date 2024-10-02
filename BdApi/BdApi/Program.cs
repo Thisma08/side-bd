@@ -4,6 +4,17 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var corsPolicyName = "AllowAllOrigins";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: corsPolicyName, policy =>
+    {
+        policy.AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
 builder.Services.AddControllers();
 
 builder.Services.AddDbContext<BandesDessineesContext>(cfg => cfg.UseSqlServer(
@@ -19,7 +30,6 @@ if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
     app.UseSwagger();
-
     app.UseSwaggerUI(c =>
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "BandesDessinees API V1");
@@ -35,6 +45,8 @@ app.UseSwaggerUI(c =>
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "BandesDessinees API V1");
     c.RoutePrefix = string.Empty;
 });
+
+app.UseCors(corsPolicyName);
 
 app.UseHttpsRedirection();
 

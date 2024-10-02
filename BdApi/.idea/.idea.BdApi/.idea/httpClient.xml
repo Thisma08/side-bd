@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="HttpClientEndpointsTabState">
+    <option name="requestToText" value="&lt;CachedHttpClientTabRequests&gt;&#10;  &lt;entry key=&quot;682b0d3895f48a7d22fa5b7a69b04fd8102ed413&quot; value=&quot;###&amp;#10;POST https://localhost:7248/api/BandesDessinees&quot; /&gt;&#10;  &lt;entry key=&quot;ac071f1924936aa74431d4a431ea711bf944c31c&quot; value=&quot;###&amp;#10;GET https://localhost:7248/api/BandesDessinees&quot; /&gt;&#10;  &lt;entry key=&quot;d08fde507701c6578612a7be67a4690cfac13f27&quot; value=&quot;###&amp;#10;GET https://localhost:7248/api/BandesDessinees/{{id}}&quot; /&gt;&#10;&lt;/CachedHttpClientTabRequests&gt;" />
+  </component>
+</project>
