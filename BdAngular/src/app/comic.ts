@@ -1,7 +1,7 @@
 export interface Comic {
-  id?: number;  // Optional because the server will generate this
+  id?: number;
   serie: string;
-  title: string;
-  numero: number;
+  titre: string;
+  numeroAlbum: number;
   editeur: string;
 }
