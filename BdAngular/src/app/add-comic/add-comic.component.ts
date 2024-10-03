@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {Comic} from "../comic";
 import {ApiService} from "../services/api.service";
 import {FormsModule} from "@angular/forms";
+import {ComicListComponent} from "../comic-list/comic-list.component";
 
 @Component({
   selector: 'app-add-comic',
@@ -13,6 +14,8 @@ import {FormsModule} from "@angular/forms";
   styleUrl: './add-comic.component.css'
 })
 export class AddComicComponent {
+  @Output() comicAdded = new EventEmitter<Comic>();
+
   comic: Comic = {
     serie: '',
     titre: '',
@@ -25,6 +28,7 @@ export class AddComicComponent {
   addComic(): void {
     this.comicService.addComic(this.comic).subscribe(result => {
       console.log('Comic added:', result);
+      this.comicAdded.emit(result);
     });
   }
 
