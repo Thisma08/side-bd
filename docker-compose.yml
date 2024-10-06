@@ -16,8 +16,17 @@ services:
     networks:
       - bd-network
     restart: always
+    
+  frontend:
+    build:
+      context: .
+      dockerfile: BdAngular/Dockerfile
+    ports:
+      - "8080:80"
+    networks:
+      - bd-network
 
-  bdApi:
+  backend:
     image: bd_web_api 
     build: 
       context: .
