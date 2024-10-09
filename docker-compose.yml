@@ -22,6 +22,7 @@ services:
     build:
       context: ./BdAngular  
       dockerfile: Dockerfile
+    container_name: bdAngular
     ports:
       - "8080:4200"
     networks:

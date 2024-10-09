@@ -42,5 +42,4 @@ public class BandesDessineesController : ControllerBase
 
         return CreatedAtAction(nameof(GetBandesDessinees), new { id = bandesDessinees.Id }, bandesDessinees);
     }
-    
 }
