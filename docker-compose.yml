@@ -18,7 +18,6 @@ services:
     restart: always
     
   frontend:
-    image: bd_angular
     build:
       context: ./BdAngular  
       dockerfile: Dockerfile
@@ -29,7 +28,6 @@ services:
       - bd-network
 
   backend:
-    image: bd_web_api 
     build: 
       context: .
       dockerfile: BdApi/BdApi/Dockerfile 
